@@ -9,7 +9,7 @@ export default function Context(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/user`, { withCredentials: true })
+      .get(`https://event-backend-api.herokuapp.com/api/v1/user`, { withCredentials: true })
       .then((res) => {
         console.log(res.status);
         console.log(res.data);

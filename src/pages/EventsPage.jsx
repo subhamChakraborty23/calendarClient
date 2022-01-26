@@ -16,7 +16,7 @@ const EventsPage = () => {
     const fetchEvents = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/v1/users/${userId}/events`
+          `https://event-backend-api.herokuapp.com/api/v1/users/${userId}/events`
         );
         setEvents(response.data);
         setLoading(false);

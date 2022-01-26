@@ -58,7 +58,7 @@ const AddEvent = (props) => {
     };
     // console.log(newEvent);
     try{
-      const response = await axios.post(`http://localhost:4000/api/v1/users/${userId}/events`,{
+      const response = await axios.post(`https://event-backend-api.herokuapp.com/api/v1/users/${userId}/events`,{
         title,
         description,
         startDate: startDateString,

@@ -59,7 +59,7 @@ const UpdateEvent = (props) => {
     };
     // console.log(newEvent);
     try{
-      const response = await axios.put(`http://localhost:4000/api/v1/users/${userId}/events/${eventId}`,{
+      const response = await axios.put(`https://event-backend-api.herokuapp.com/api/v1/users/${userId}/events/${eventId}`,{
         title,
         description,
         startDate: startDateString,

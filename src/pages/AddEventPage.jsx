@@ -15,7 +15,7 @@ const AddEventPage = () => {
     const fetchUser = async () => {
       
       try {
-        const response = await axios.get(`http://localhost:4000/api/v1/users/${userId}`);
+        const response = await axios.get(`https://event-backend-api.herokuapp.com/api/v1/users/${userId}`);
         setUser(response.data);
         setUserExist(true);
         setLoading(false);

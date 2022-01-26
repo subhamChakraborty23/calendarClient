@@ -13,7 +13,7 @@ const Logout = () => {
   const url = "http://localhost:4000";
   const logout = async() => {
     await axios
-      .get(`http://localhost:4000/auth/logout`, {
+      .get(`https://event-backend-api.herokuapp.com/auth/logout`, {
         withCredentials: true,
       })
       .then((res) => {

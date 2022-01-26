@@ -19,7 +19,7 @@ const EventDetailsPage = () => {
     e.preventDefault();
     // console.log(eventId);
     try {
-        const res = await axios.delete(`http://localhost:4000/api/v1/users/${userId}/events/${eventId}`);
+        const res = await axios.delete(`https://event-backend-api.herokuapp.com/api/v1/users/${userId}/events/${eventId}`);
         if(res.status === 200){
             //navigate to events page
             navigate("/user/viewEvents/"+userId);
