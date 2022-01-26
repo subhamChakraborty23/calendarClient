@@ -11,12 +11,12 @@ const EventsPage = () => {
   const [events, setEvents] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const { userId } = useParams();
-
+  const url = process.env.REACT_APP_SERVER_URL
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         const response = await axios.get(
-          `https://event-backend-api.herokuapp.com/api/v1/users/${userId}/events`
+          `${url}/api/v1/users/${userId}/events`
         );
         setEvents(response.data);
         setLoading(false);

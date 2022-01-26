@@ -3,7 +3,7 @@ import { Form, Row, Col, Button, Card } from "react-bootstrap";
 
 
 const Login = () => {
-  const url = "https://event-backend-api.herokuapp.com"
+  const url = process.env.REACT_APP_SERVER_URL
   const googleLogin = () => {
     window.open(`${url}/auth/google`, "_self");
     

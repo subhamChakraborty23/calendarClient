@@ -10,10 +10,10 @@ const Logout = () => {
   let navigate = useNavigate();
   const { userObject, setUserObject, isLoggedIn, setIsLoggedIn } =
     useContext(myContext);
-  const url = "http://localhost:4000";
+  const url = process.env.REACT_APP_SERVER_URL;
   const logout = async() => {
     await axios
-      .get(`https://event-backend-api.herokuapp.com/auth/logout`, {
+      .get(`${url}/auth/logout`, {
         withCredentials: true,
       })
       .then((res) => {

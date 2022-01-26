@@ -10,12 +10,12 @@ const AddEventPage = () => {
   const [userExist, setUserExist] = useState(false);
   const [isLoading, setLoading] = useState(true);
   const [user, setUser] = useState({});
-
+  const url = process.env.REACT_APP_SERVER_URL
   useEffect(() => {
     const fetchUser = async () => {
       
       try {
-        const response = await axios.get(`https://event-backend-api.herokuapp.com/api/v1/users/${userId}`);
+        const response = await axios.get(`${url}/api/v1/users/${userId}`);
         setUser(response.data);
         setUserExist(true);
         setLoading(false);

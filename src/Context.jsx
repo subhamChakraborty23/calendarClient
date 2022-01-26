@@ -7,9 +7,10 @@ export default function Context(props) {
   const [userObject, setUserObject] = useState(initialState);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const url = process.env.REACT_APP_SERVER_URL
   useEffect(() => {
     axios
-      .get(`https://event-backend-api.herokuapp.com/api/v1/user`, { withCredentials: true })
+      .get(`${url}/api/v1/user`, { withCredentials: true })
       .then((res) => {
         console.log(res.status);
         console.log(res.data);

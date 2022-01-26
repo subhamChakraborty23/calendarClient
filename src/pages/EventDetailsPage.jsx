@@ -10,6 +10,7 @@ const EventDetailsPage = () => {
   const [event, setEvent] = useState({});
   const [isLoading, setLoading] = useState(true);
   const { userId, eventId } = useParams();
+  const url = process.env.REACT_APP_SERVER_URL
 
   const parseDate = (date) => {
     return moment(date).format("YYYY-MM-DD");
@@ -19,7 +20,7 @@ const EventDetailsPage = () => {
     e.preventDefault();
     // console.log(eventId);
     try {
-        const res = await axios.delete(`https://event-backend-api.herokuapp.com/api/v1/users/${userId}/events/${eventId}`);
+        const res = await axios.delete(`${url}/api/v1/users/${userId}/events/${eventId}`);
         if(res.status === 200){
             //navigate to events page
             navigate("/user/viewEvents/"+userId);

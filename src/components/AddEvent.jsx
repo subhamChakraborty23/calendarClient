@@ -32,6 +32,7 @@ const AddEvent = (props) => {
   const [endDate, setEndDate] = useState(new Date());
   const [endTime, setEndTime] = useState(new Date().getTime());
   const [createdBy, setCreatedBy] = useState("");
+  const url = process.env.REACT_APP_SERVER_URL
 
   const parseDate = (date) => {
     return moment(date).format("YYYY-MM-DD");
@@ -58,7 +59,7 @@ const AddEvent = (props) => {
     };
     // console.log(newEvent);
     try{
-      const response = await axios.post(`https://event-backend-api.herokuapp.com/api/v1/users/${userId}/events`,{
+      const response = await axios.post(`${url}/api/v1/users/${userId}/events`,{
         title,
         description,
         startDate: startDateString,
